@@ -92,12 +92,32 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+
     def sort(self):
         """
         Sort the robot's list.
         """
         # Fill this out
-        pass
+
+        self.set_light_on()
+        while self.light_is_on():
+            self.set_light_off()
+            while self.can_move_right():
+                if self.compare_item() is None:
+                    self.swap_item()
+                    self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+                    self.set_light_on()
+                else:
+                    self.move_left()
+                    self.swap_item()
+                self.move_right()
+            while self.move_left():
+                pass
+
 
 
 if __name__ == "__main__":
