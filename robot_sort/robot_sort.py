@@ -118,7 +118,7 @@ class SortingRobot:
             while self.move_left():
                 pass
 
-
+    # spend 30 minutes trying to figure out why this was working in python tutor but did nothing in pycharm... when moving it back and forth, I pasted it wrong and was failing silenty the whole time.
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
